@@ -1,0 +1,179 @@
+  [1m[35m (45.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "db/board_test"[0m
+  [1m[35m (214.4ms)[0m  [1m[35mCREATE DATABASE "db/board_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "boards" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "boards" ("id" bigserial primary key, "email" character varying(50) NOT NULL, "mines" integer[] NOT NULL, "rows" integer NOT NULL, "cols" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230724213903)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2024-09-27 16:03:11.633363"], ["updated_at", "2024-09-27 16:03:11.633363"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "3b1ed6672529840420edc832a5d02367d20e782e"], ["created_at", "2024-09-27 16:03:11.637297"], ["updated_at", "2024-09-27 16:03:11.637297"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.8ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "james@stiedemann.example"], ["mines", "{{2,2},{3,4},{3,4},{1,0},{1,0}}"], ["rows", 6], ["cols", 6], ["created_at", "2024-09-27 16:03:12.125682"], ["updated_at", "2024-09-27 16:03:12.125682"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "paris@kuhn.test"], ["mines", "{{2,4},{2,2},{3,3},{4,4},{2,4},{2,4},{1,0},{1,3},{4,0},{3,1}}"], ["rows", 9], ["cols", 6], ["created_at", "2024-09-27 16:03:12.130285"], ["updated_at", "2024-09-27 16:03:12.130285"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "kari_zemlak@borer-nader.test"], ["mines", "{{3,1},{0,0},{2,1},{4,1},{2,4},{2,2}}"], ["rows", 6], ["cols", 10], ["created_at", "2024-09-27 16:03:12.132137"], ["updated_at", "2024-09-27 16:03:12.132137"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "carlo_emard@torp-rosenbaum.test"], ["mines", "{{0,3},{1,2},{1,4},{4,1},{4,0},{1,4},{4,3}}"], ["rows", 5], ["cols", 6], ["created_at", "2024-09-27 16:03:12.133895"], ["updated_at", "2024-09-27 16:03:12.133895"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ezekiel@torphy-klein.example"], ["mines", "{{2,4},{3,0},{2,1},{3,2},{4,3}}"], ["rows", 6], ["cols", 8], ["created_at", "2024-09-27 16:03:12.135634"], ["updated_at", "2024-09-27 16:03:12.135634"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered boards/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 272)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 410)
+Completed 200 OK in 14ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4236)
+  [1m[36mBoard Load (0.4ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."created_at" DESC LIMIT $1[0m  [["LIMIT", 10]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "toi.brown@schmitt.test"], ["mines", "{{3,3},{1,0},{0,3},{4,1},{2,3},{4,0},{4,0},{2,2}}"], ["rows", 6], ["cols", 5], ["created_at", "2024-09-27 16:03:12.236395"], ["updated_at", "2024-09-27 16:03:12.236395"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "adrienne.west@stiedemann.example"], ["mines", "{{0,0},{4,4},{3,1},{0,3},{0,1},{0,1},{1,0},{3,0},{0,1},{1,4}}"], ["rows", 6], ["cols", 5], ["created_at", "2024-09-27 16:03:12.238303"], ["updated_at", "2024-09-27 16:03:12.238303"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bradford_becker@goldner.example"], ["mines", "{{1,2},{1,0},{3,3},{0,3},{3,4},{0,3},{4,1},{2,4}}"], ["rows", 5], ["cols", 6], ["created_at", "2024-09-27 16:03:12.240041"], ["updated_at", "2024-09-27 16:03:12.240041"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "ahmed.streich@berge.example"], ["mines", "{{3,1},{3,0},{2,3},{0,0},{3,1},{1,2},{0,2},{1,3}}"], ["rows", 5], ["cols", 6], ["created_at", "2024-09-27 16:03:12.241541"], ["updated_at", "2024-09-27 16:03:12.241541"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "daisey.barrows@casper.example"], ["mines", "{{3,1},{0,2},{2,4},{2,1},{2,1},{1,2},{3,4}}"], ["rows", 9], ["cols", 10], ["created_at", "2024-09-27 16:03:12.243114"], ["updated_at", "2024-09-27 16:03:12.243114"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "billie.herman@gleason.example"], ["mines", "{{4,3},{2,1},{0,2},{1,0},{1,3},{0,0},{1,2},{2,2}}"], ["rows", 8], ["cols", 7], ["created_at", "2024-09-27 16:03:12.244714"], ["updated_at", "2024-09-27 16:03:12.244714"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "eveline@cremin.example"], ["mines", "{{2,4},{3,4},{3,0},{1,0},{3,4},{3,1},{3,2}}"], ["rows", 7], ["cols", 6], ["created_at", "2024-09-27 16:03:12.246233"], ["updated_at", "2024-09-27 16:03:12.246233"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "iluminada_bernier@stroman.test"], ["mines", "{{2,3},{4,4},{4,1},{2,3},{3,0}}"], ["rows", 6], ["cols", 7], ["created_at", "2024-09-27 16:03:12.247725"], ["updated_at", "2024-09-27 16:03:12.247725"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "dwain@wuckert.test"], ["mines", "{{2,3},{0,4},{3,2},{4,2},{3,0},{0,3},{2,2},{2,1},{4,2},{3,0}}"], ["rows", 6], ["cols", 6], ["created_at", "2024-09-27 16:03:12.249278"], ["updated_at", "2024-09-27 16:03:12.249278"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "roseanna.padberg@weissnat-koepp.example"], ["mines", "{{0,3},{0,2},{4,2},{4,3},{0,2}}"], ["rows", 8], ["cols", 10], ["created_at", "2024-09-27 16:03:12.250731"], ["updated_at", "2024-09-27 16:03:12.250731"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered boards/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 103)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 225)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 685)
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by BoardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering boards/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered boards/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 103)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.5ms | Allocations: 225)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 686)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBoard Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "boards"[0m
+Processing by BoardsController#create as HTML
+  Parameters: {"board"=>{"cols"=>"5", "email"=>"test@example.com", "mines"=>"5", "rows"=>"5"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test@example.com"], ["mines", "{13,0,19,17,22}"], ["rows", 5], ["cols", 5], ["created_at", "2024-09-27 16:03:12.269989"], ["updated_at", "2024-09-27 16:03:12.269989"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/boards/16
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1256)
+  [1m[36mBoard Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "boards"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by BoardsController#create as HTML
+  Parameters: {"board"=>{"cols"=>"5", "email"=>"test@example.com", "mines"=>"5", "rows"=>"5"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.2ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "test@example.com"], ["mines", "{18,3,11,22,13}"], ["rows", 5], ["cols", 5], ["created_at", "2024-09-27 16:03:12.275938"], ["updated_at", "2024-09-27 16:03:12.275938"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/boards/17
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms | Allocations: 853)
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" ORDER BY "boards"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by BoardsController#create as HTML
+  Parameters: {"board"=>{"cols"=>"5", "email"=>"test@example.com", "mines"=>"5", "rows"=>"0"}}
+Redirected to http://test.host/
+Filter chain halted as :check_mines rendered or redirected
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 241)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.3ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "bobbie_stehr@stracke-abshire.example"], ["mines", "{{2,2},{1,0},{3,3},{2,2},{1,4},{2,2}}"], ["rows", 8], ["cols", 9], ["created_at", "2024-09-27 16:03:12.289935"], ["updated_at", "2024-09-27 16:03:12.289935"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered boards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 104)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 226)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2558)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mBoard Create (0.4ms)[0m  [1m[32mINSERT INTO "boards" ("email", "mines", "rows", "cols", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "roselee@stracke.test"], ["mines", "{{2,2},{0,4},{2,3},{2,1},{3,1},{3,0},{3,4}}"], ["rows", 8], ["cols", 6], ["created_at", "2024-09-27 16:03:12.304256"], ["updated_at", "2024-09-27 16:03:12.304256"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering boards/show.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered boards/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 103)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 225)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1474)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by BoardsController#show as HTML
+  Parameters: {"id"=>"invalid_id"}
+  [1m[36mBoard Load (0.2ms)[0m  [1m[34mSELECT "boards".* FROM "boards" WHERE "boards"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Redirected to http://test.host/
+Completed 302 Found in 1ms (ActiveRecord: 0.2ms | Allocations: 345)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
