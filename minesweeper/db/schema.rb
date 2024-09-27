@@ -14,6 +14,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_24_213903) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  
+  create_table "boards", force: :cascade do |t|
+    t.string "email", limit: 50, null: false
+    t.integer "mines", null: false, array: true
+    t.integer "rows", null: false
+    t.integer "cols", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
